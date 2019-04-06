@@ -15,31 +15,6 @@ myclient = pymongo.MongoClient("mongodb+srv://ryan:password22@cluster0-cxijt.gcp
 #                 "health"
 #              }
 
-class Food:
-    def __init__(self, name, lst):
-        self.name = name
-        self.ingredients = []
-        for x in lst:
-            self.ingredients.append(Ingredient(x))
-
-
-class Ingredient:
-    def __init__(self, name):
-        self.name = name
-        db = myclient.test
-        posts = db.ingredients
-        if posts.find_one({'title': name}) == None: # if ingredient not in database
-            d = get_info(name)
-            post_data = {
-                "name" : name,
-                "info" : d
-            }
-            result = posts.insert_one(post_data)
-
-
-        # self.summary = d["summary"]
-        # self.health = d["health"]
-
 
 def create_entry(name, ingredients):
     db = myclient.ingredientInfo
