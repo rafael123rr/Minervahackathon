@@ -1,6 +1,7 @@
 import pytesseract
 import cv2
 
+
 def read_image(image):
     """
     param: image path
@@ -14,5 +15,8 @@ def read_image(image):
 
     return pytesseract.image_to_string(fixed)
 
+
+if __name__ is "__main__":
+    pass
 
 
