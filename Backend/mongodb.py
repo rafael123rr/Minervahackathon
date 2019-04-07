@@ -1,7 +1,7 @@
 import pymongo
 from wiki_info import get_info
 import ssl
-from Image_Parsing.image_ocr import read_image
+from Image_Parsing.image_parse import parse_ingredients
 
 myclient = pymongo.MongoClient("mongodb+srv://ryan:password22@cluster0-cxijt.gcp.mongodb.net/test?retryWrites=true&ssl=true&ssl_cert_reqs=CERT_NONE")
 
@@ -17,8 +17,7 @@ myclient = pymongo.MongoClient("mongodb+srv://ryan:password22@cluster0-cxijt.gcp
 #              }
 
 def api_wrapper(name, path):
-    s = read_image(path)
-    lst = parse(s)
+    lst = parse_ingredients(path)
     create_entry(name, lst)
 
 
@@ -64,20 +63,6 @@ def postTest(term):
 
     result = posts.insert_one(post_data)
 
-from flask import Flask
-
-# Create the application instance
-app = Flask(__name__)
-
-# Create a URL route in our application for "/"
-@app.route('/')
-def main():
-
-    return True
-
-# If we're running in stand alone mode, run the application
-if __name__ == '__main__':
-    app.run(debug=True)
 
 # db = myclient.test2
 # posts = db.ingredients
