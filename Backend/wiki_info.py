@@ -15,9 +15,12 @@ def get_info(page_name): # take string page_name, returns dictionary with info
         res["health"] = "no health data available"
     return res
 
+
 def format(dict):
     for thing in dict:
         print(thing + ":")
         print(dict[thing])
 
-print(get_info("iron"))
+
+if __name__ == "__main__":
+    print(get_info("iron"))
