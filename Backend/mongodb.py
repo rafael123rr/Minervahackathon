@@ -1,7 +1,7 @@
 import pymongo
 from wiki_info import get_info
 import ssl
-from Image_Parsing.image_parse import parse_ingredients
+from Image_Parsing.image_parse import parse_ingredients_path
 
 myclient = pymongo.MongoClient("mongodb+srv://ryan:password22@cluster0-cxijt.gcp.mongodb.net/test?retryWrites=true&ssl=true&ssl_cert_reqs=CERT_NONE")
 
@@ -17,7 +17,7 @@ myclient = pymongo.MongoClient("mongodb+srv://ryan:password22@cluster0-cxijt.gcp
 #              }
 
 def api_wrapper(name, path):
-    lst = parse_ingredients(path)
+    lst = parse_ingredients_path(path)
     create_entry(name, lst)
 
 

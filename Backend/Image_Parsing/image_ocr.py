@@ -14,7 +14,7 @@ def read_url(image_url):
     image = np.asarray(bytearray(resp.read()), dtype="uint8")
     im = cv2.imdecode(image, cv2.IMREAD_GRAYSCALE)
 
-    pytesseract.pytesseract.tesseract_cmd="C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+   # pytesseract.pytesseract.tesseract_cmd="C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
     BLACK = [0, 0, 0]
     fixed = cv2.copyMakeBorder(im, top=30, bottom=30, left=30, right=30, borderType=cv2.BORDER_CONSTANT, value=BLACK)
 
@@ -24,7 +24,6 @@ def read_url(image_url):
 def read_path(image_path):
 
     im = cv2.imread(image_path, 0)
-    pytesseract.pytesseract.tesseract_cmd = "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
     BLACK = [0, 0, 0]
     fixed = cv2.copyMakeBorder(im, top=30, bottom=30, left=30, right=30, borderType=cv2.BORDER_CONSTANT, value=BLACK)
 

@@ -1,4 +1,4 @@
-from Minervahackathon.Backend.Image_Parsing import image_ocr
+from Image_Parsing import image_ocr
 
 """
 Get ingredients from image by passing image path to parse_ingredients()
