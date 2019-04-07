@@ -31,11 +31,12 @@ def create_entry(name, ingredients):
 
         if id == None: # if ingredient not in database
             d = get_info(i)
-            post_data = {
-                "name" : i,
-                "info" : d
-            }
-            result = food_ingredients.insert_one(post_data)
+            if d != None:
+                post_data = {
+                    "name" : i,
+                    "info" : d
+                }
+                result = food_ingredients.insert_one(post_data)
 
         food_post["ingredients"].append(i)
     result = foods.insert_one(food_post)
