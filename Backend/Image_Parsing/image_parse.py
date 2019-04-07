@@ -4,12 +4,12 @@ from Minervahackathon.Backend.Image_Parsing import image_ocr
 Get ingredients from image by passing image path to parse_ingredients()
 """
 
-def parse_ingredients(image):
+def parse_ingredients(image_url):
     """
-    param: image - file path to image
-    returns result of parse_string function - ingredients
+    param: image - url to image
+    returns result of parse_string function - python object list of ingredients
     """
-    text = image_ocr.read_image(image)
+    text = image_ocr.read_image(image_url)
 
     return parse_string(text)
 
@@ -53,4 +53,4 @@ def parse_string(text):
 
 
 if __name__ == "__main__":
-    print(parse_ingredients("cheese.jpg"))
+    print(parse_ingredients("https://healthycrush.com/wp-content/uploads/reading-ingredients-labels.png"))
