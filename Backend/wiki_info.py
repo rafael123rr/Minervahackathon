@@ -20,4 +20,4 @@ def format(dict):
         print(thing + ":")
         print(dict[thing])
 
-# print(get_info("Xantham Gum"))
+print(get_info("iron"))
