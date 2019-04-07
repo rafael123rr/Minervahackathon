@@ -1,0 +1,6 @@
+Flask
+pymongo
+wiki_info
+ssl
+pytesseract
+cv2
