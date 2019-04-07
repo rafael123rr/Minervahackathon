@@ -3,4 +3,7 @@ pymongo
 wiki_info
 ssl
 pytesseract
-cv2
+opencv-python
+numpy
+urllib3
+requests
